@@ -25,11 +25,13 @@ The I-Type instructions in the program are shown below with the instruction mach
     4. sw   $s2, 0x54($0)
     
 |Opcode|rs|rt|Imm|
+|--|--|--|--|
 |6 bits|5 bits|5 bits|16 bits|
 
 Line 1:
 
 |Label|value|Decimal|Binary|
+|--|--|--|--|
 |opcode|addi|8|001000|
 |rt|$s0|16|10000|
 |rs|$0|0|00000|
@@ -46,6 +48,7 @@ Hexadecimal:
 Line 2:
 
 |Label|value|Decimal|Binary|
+|--|--|--|--|
 |opcode|addi|8|001000|
 |rt|$s1|17|10001|
 |rs|$0|0|00000|
@@ -62,6 +65,7 @@ Hexadecimal:
 Line 4: 
 
 |Label|value|Decimal|Binary|
+|--|--|--|--|
 |opcode|sw|43|101011|
 |rt|$s2|18|10010|
 |rs|$0|0|00000|
@@ -84,11 +88,13 @@ The single R-type instruction is:
 and the machine code implementation
 
 |Opcode|rs|rt|rd|shamt|func|
+|--|--|--|--|--|--|
 |6 bits|5 bits|5 bits|5 bits|6bits|
 
 The Binary translation of line 3 is then:
 
 |Label|value|Decimal|Binary|
+|--|--|--|--|
 |opcode|R-Type|0|000000|
 |rd|$s2|18|10010|
 |rt|$s1|11|10001|
