@@ -30,7 +30,7 @@ The I-Type instructions in the program are shown below with the instruction mach
 
 Line 1:
 
-|Label|value|Decimal|Binary|
+|Label|Value|Decimal|Binary|
 |:-:|:-:|:-:|:-:|
 |opcode|addi|8|001000|
 |rt|$s0|16|10000|
@@ -47,7 +47,7 @@ Hexadecimal:
 
 Line 2:
 
-|Label|value|Decimal|Binary|
+|Label|Value|Decimal|Binary|
 |:-:|:-:|:-:|:-:|
 |opcode|addi|8|001000|
 |rt|$s1|17|10001|
@@ -64,7 +64,7 @@ Hexadecimal:
     
 Line 4: 
 
-|Label|value|Decimal|Binary|
+|Label|Value|Decimal|Binary|
 |:-:|:-:|:-:|:-:|
 |opcode|sw|43|101011|
 |rt|$s2|18|10010|
@@ -93,7 +93,7 @@ and the machine code implementation
 
 The Binary translation of line 3 is then:
 
-|Label|value|Decimal|Binary|
+|Label|Value|Decimal|Binary|
 |:-:|:-:|:-:|:-:|
 |opcode|R-Type|0|000000|
 |rd|$s2|18|10010|
@@ -112,6 +112,7 @@ Hexadecimal:
 #### Result
 
 The hexadecimal machine code for the program above is therefor
+
 |Line|Code|
 |:-:|:-:|
 |1|0x2010002C|
