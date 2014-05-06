@@ -69,15 +69,15 @@ Line 4:
 |opcode|sw|43|101011|
 |rt|$s2|18|10010|
 |rs|$0|0|00000|
-|imm|0x54|--|0000 0000 0010 1100|
+|imm|0x54|--|0000 0000 0101 0100|
 
 Concatenated binary:
 
-    1010 1100 0001 0010 0000 0000 0010 1100
+    1010 1100 0001 0010 0000 0000 0101 0100
     
 Hexadecimal:
 
-    0xAC12002C
+    0xAC120054
     
 #### R-type Instructions
 
@@ -118,4 +118,14 @@ The hexadecimal machine code for the program above is therefor
 |1|0x2010002C|
 |2|0x2011FFDB|
 |3|0x02119020|
-|4|0xAC12002C|
+|4|0xAC120054|
+
+#### Testing
+
+The MIPS program was tested in the MIPS VHDL simulator provided. The instructions were loaded individually by way of a testbench program and the output read with the waveform shown below. 
+
+![alt text](https://raw2.github.com/IanGoodbody/ECE281_CE1/master/Circuit.JPG "Output waveform")
+
+The three registers of intrest, $s0 mem(16), $s1 mem(17), and $s2 mem(18), are highlighted in yellow. The instructions are shown in the expected order in the "instr" bus. Because this is a single cycle MIPS machine the values update within the same instruction period and the instructions all take the same amount of time. The progrom is shown to work in the waveform as all the register values are updated with the propepr value durring the propper instruction. The "sw" command can be verified by noting that the "memwrite" signal is active, the "aluout" bus is sending the address value 0x54 to memory, and the "writedata" bus is sending the value 0x7 from $s2 into the memory.
+
+### Task 3 progeraming 
