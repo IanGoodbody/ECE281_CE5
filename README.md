@@ -173,6 +173,6 @@ With the machine code reading
     
 The testbench waveform is shown below. The registers of interest with the pertinent signals are highlighted in yellow. The instructions are shown correctly across the top on the "instr" bus, while the registers $s0 to $s3 (16 to 19) show the values indicated in the comments. 
 
-![alt text](https://github.com/IanGoodbody/ECE281_CE5/blob/master/ori_waveform.jpg "ORI waveform")
+![alt text](https://raw.githubusercontent.com/IanGoodbody/ECE281_CE5/master/ori_waveform.jpg "ORI waveform")
 
 Documentation: None
