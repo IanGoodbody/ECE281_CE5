@@ -100,6 +100,7 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 		
+		--Function Test
 		instr <= X"2010002C";
 		wait for clk_period;
 		
@@ -110,11 +111,29 @@ BEGIN
 		wait for clk_period;
 		
 		instr <= X"AC120054";
+		wait for clk_period*2;
+		
+		--ORI test
+		instr <= X"02108022";
 		wait for clk_period;
 		
-      wait for clk_period*10;
+		instr <= X"2010ABCD";
+		wait for clk_period;
+		
+		instr <= X"3611FFFF";
+		wait for clk_period;
+		
+		instr <= X"3612ABCD";
+		wait for clk_period;
+		
+		instr <= X"36135432";
+		wait for clk_period;
+		
+      wait for clk_period;
 
-      -- insert stimulus here 
+      -- insert stimulus here
+		
+		
 
       wait;
    end process;
