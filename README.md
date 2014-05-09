@@ -171,8 +171,12 @@ With the machine code reading
     4. 0x3612ABCD
     5. 0x36135432
     
-The testbench waveform is shown below. The registers of interest with the pertinent signals are highlighted in yellow. The instructions are shown correctly across the top on the "instr" bus, while the registers $s0 to $s3 (16 to 19) show the values indicated in the comments. 
+The testbench waveform is shown below. The registers of interest with the pertinent signals are highlighted in yellow. The instructions are shown correctly across the top on the "instr" bus, while the registers $s0 to $s3 (16 to 19) show the values indicated in the comments.
+
+A zoomed view of the registers of the waveform are alos provided with the signals of intrest highlighed in yellow.
 
 ![alt text](https://raw.githubusercontent.com/IanGoodbody/ECE281_CE5/master/ori_waveform.jpg "ORI waveform")
+
+![alt text](https://raw.githubusercontent.com/IanGoodbody/ECE281_CE5/master/ori_waveform2.jpg "ORI waveform")
 
 Documentation: None
