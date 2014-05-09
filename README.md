@@ -113,12 +113,10 @@ Hexadecimal:
 
 The hexadecimal machine code for the program above is therefor
 
-|Line|Code|
-|:-:|:-:|
-|1|0x2010002C|
-|2|0x2011FFDB|
-|3|0x02119020|
-|4|0xAC120054|
+    1. 0x2010002C
+    2. 0x2011FFDB
+    3. 0x02119020
+    4. 0xAC120054
 
 #### Testing
 
@@ -126,11 +124,11 @@ The MIPS program was tested in the MIPS VHDL simulator provided. The instruction
 
 ![alt text](https://raw.githubusercontent.com/IanGoodbody/ECE281_CE5/master/waveform.jpg "Output waveform")
 
-The three registers of intrest, $s0 mem(16), $s1 mem(17), and $s2 mem(18), are highlighted in yellow. The instructions are shown in the expected order in the "instr" bus. Because this is a single cycle MIPS machine the values update within the same instruction period and the instructions all take the same amount of time. The progrom is shown to work in the waveform as all the register values are updated with the propepr value durring the propper instruction. The "sw" command can be verified by noting that the "memwrite" signal is active, the "aluout" bus is sending the address value 0x54 to memory, and the "writedata" bus is sending the value 0x7 from $s2 into the memory.
+The three registers of interest, $s0 mem(16), $s1 mem(17), and $s2 mem(18), are highlighted in yellow. The instructions are shown in the expected order in the "instr" bus. Because this is a single cycle MIPS machine the values update within the same instruction period and the instructions all take the same amount of time. The program is shown to work in the waveform as all the register values are updated with the proper value during the proper instruction. The "sw" command can be verified by noting that the "memwrite" signal is active, the "aluout" bus is sending the address value 0x54 to memory, and the "writedata" bus is sending the value 0x7 from $s2 into the memory.
 
-### Task 3 progeraming 
+### Task 3 programing 
 
-The final task was to implementthe ORI or "or immediate" functionality to the MIPS  program. Because the MIPS datapath is already configured to implement immediate instructions like ANDI, the datapath will not need to be modified only the constructor. Additionally, because the controler implements logical immediate instructions like ANDI the only signal that would need to be changed from such an instruction would be the three bit "alucontrol" bus which requires a "001" for the or instruction. As for the specifications of the ORI instruction, appendix B of the course text indicates that the instruction has a function code of 13 or 001101 and has the same input format as other I-type instructions shown above.
+The final task was to implement the ORI or "or immediate" functionality to the MIPS  program. Because the MIPS datapath is already configured to implement immediate instructions like ANDI, the datapath will not need to be modified only the constructor. Additionally, because the controller implements logical immediate instructions like ANDI the only signal that would need to be changed from such an instruction would be the three bit "alucontrol" bus which requires a "001" for the or instruction. As for the specifications of the ORI instruction, appendix B of the course text indicates that the instruction has a function code of 13 or 001101 and has the same input format as other I-type instructions shown above.
 
 Implementing the ORI functionality required adding a new state to the controller for the opcode "001101" the two modifications are shown below:
 
@@ -157,7 +155,7 @@ Lines 215 - 217
     
 The changes to the controller included adding a new case for the ORI opcode, then adding another "aluop" signal "10" to push cause an or operation.
 
-The ORI in struction was tested witht the following assembly code which was added to the previous testbench:
+The ORI in instruction was tested with the following assembly code which was added to the previous testbench:
 
     SUB $s0, $s0, $s0, # $s0 = 0 (resets $s0 to 0)
     ADDI $s0, $0, 0xABCD # $s0 = 0 + 0xffffabcd 
@@ -173,6 +171,8 @@ With the machine code reading
     4. 0x3612ABCD
     5. 0x36135432
     
-The testbench waveform is shown below. The registers of intrest with the pertinant signals are highlighted in yellow. The instructions are shown correctly across the top on the "instr" bus, while the registers $s0 to $s3 (16 to 19) show the values indicated in the comments. 
+The testbench waveform is shown below. The registers of interest with the pertinent signals are highlighted in yellow. The instructions are shown correctly across the top on the "instr" bus, while the registers $s0 to $s3 (16 to 19) show the values indicated in the comments. 
 
-![alt text](https://raw2.github.com/IanGoodbody/ECE281_CE1/master/Circuit.JPG "ORI waveform")
+![alt text](https://raw.githubusercontent.com/IanGoodbody/ECE281_CE5/master/ori_waveform.jpg "ORI waveform")
+
+Documentation: None
